@@ -1,5 +1,5 @@
 # PAGDNet
-This website shares the code of the "Pixel attention-guided CNN for image denoising" finished by Jibin Deng*, 2024 IEEE International Conference on Acoustics, Speech and Signal Processing.
+This website shares the code of the "Pixel attention-guided CNN for image denoising" finished by Jibin Deng.
  
 # Prerequisites:
 
