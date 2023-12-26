@@ -40,10 +40,10 @@ The real-world test dataset "CC" you can download here (Selected in the paper):
 
 https://github.com/csjunxu/MCWNNM_ICCV2017
 
-The real-world test dataset "Nam" you can download here:
+The real-world test dataset "Nam" you can download here (Selected in the paper):
 
 https://github.com/GuoShi28/CBDNet/tree/master/testsets/Nam_patches
 
-The real-world test dataset "DND" you can download here (Extra tested, no ground truth):
+The real-world test dataset "DND" you can download here (No ground truth):
 
 https://github.com/GuoShi28/CBDNet/tree/master/testsets/DND_patches
