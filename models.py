@@ -33,5 +33,5 @@ def PAGDNet(): #original format def PAGDNet(), data is used to obtain the reshap
     o = Conv2D(filters=1, kernel_size=(3,3), strides=(1,1), padding='same')(o)  # gray is 1 color is 3
     z = Subtract()([inpt, o])
     model = Model(inputs=inpt, outputs=z)
-    # model.summary()
+    # model.summary() # print the size of model
     return model
