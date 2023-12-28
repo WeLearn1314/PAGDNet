@@ -1,6 +1,6 @@
 # PAGDNet
-This website shares the code of the "Pixel attention-guided CNN for image denoising" finished by Jibin Deng.
- 
+Pixel attention-guided CNN for image denoising（PAGDNet）by Nanrun Zhou, Jibin Deng, Wenjun Yu and Meng Pang is submitted in Knowledge-Based Systems, 2023.
+
 # Prerequisites:
 
 python == 3.6.2
