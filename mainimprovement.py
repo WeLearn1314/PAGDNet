@@ -14,7 +14,7 @@ import random
 
 ## Params
 parser = argparse.ArgumentParser()
-parser.add_argument('--model', default='BRDNet', type=str, help='choose a type of model')
+parser.add_argument('--model', default='PAGDNet', type=str, help='choose a type of model')
 parser.add_argument('--batch_size', default=32, type=int, help='batch size') #128
 parser.add_argument('--train_data', default='./data/waterloo5050grayimage/', type=str, help='path of train data')
 parser.add_argument('--test_dir', default='./data/Test/Set12', type=str, help='directory of test dataset') #original path ./data/Test/Set12
@@ -87,7 +87,7 @@ def train():
     images = load_images(args.train_data)
     if args.pretrain:   model = load_model(args.pretrain, compile=False) #False
     else:   
-        if args.model == 'BRDNet': model = models.BRDNet() #orginal format
+        if args.model == 'PAGDNet': model = models.PAGDNet() #orginal format
     model.compile(optimizer=Adam(), loss=['mse'])
     # use call back functions
     ckpt = ModelCheckpoint(save_dir+'/model_{epoch:02d}.h5', monitor='val_loss', 
@@ -121,9 +121,8 @@ def test(model):
         y_predict = model.predict(x_test) #tcw
         # calculate numeric metrics
         img_out = y_predict.reshape(img_clean.shape)
-        # img_out = np.clip(img_out, 0, 1)
         img_out = np.clip(img_out, 0.0, 1.0)
-        img_test = np.clip(img_test, 0.0, 1.0)
+        # img_test = np.clip(img_test, 0.0, 1.0)
         psnr_noise, psnr_denoised = compare_psnr(img_clean, img_test), compare_psnr(img_clean, img_out)
         ssim_noise, ssim_denoised = compare_ssim(img_clean, img_test), compare_ssim(img_clean, img_out)
         psnr.append(psnr_denoised)
