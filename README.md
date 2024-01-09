@@ -2,7 +2,6 @@
 Pixel attention-guided CNN for image denoising（PAGDNet）by Nanrun Zhou*, Jibin Deng, Wenjun Yu and Meng Pang* is submitted to Knowledge-Based Systems, 2023.
 
 # Prerequisites:
-
 python == 3.6.2
 
 tensorflow == 2.0.0
