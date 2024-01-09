@@ -3,12 +3,10 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 patch_size, stride = 50, 10
 aug_times = 1
 scales = [1, 0.9, 0.8, 0.7]
 batch_size = 20
-
 
 def show(x,title=None,cbar=False,figsize=None):
     import matplotlib.pyplot as plt
@@ -21,7 +19,6 @@ def show(x,title=None,cbar=False,figsize=None):
     plt.show()
 
 def data_aug(img, mode=0):
-
     if mode == 0:
         return img
     elif mode == 1:
@@ -40,7 +37,6 @@ def data_aug(img, mode=0):
         return np.flipud(np.rot90(img, k=3))
 
 def gen_patches(file_name):
-
     # read image
     img = cv2.imread(file_name, 0)  # gray scale
     h, w = img.shape
@@ -55,8 +51,7 @@ def gen_patches(file_name):
                 # data aug
                 for k in range(0, aug_times):
                     x_aug = data_aug(x, mode=np.random.randint(0,8))
-                    patches.append(x_aug)
-                
+                    patches.append(x_aug)             
     return patches
 
 def datagenerator(data_dir='data/Train400',verbose=False):
@@ -78,10 +73,8 @@ def datagenerator(data_dir='data/Train400',verbose=False):
         cv2.imwrite(save_path, img)
     # discard_n = len(data)-len(data)//batch_size*batch_size;
     # data = np.delete(data,range(discard_n),axis = 0)
-
     print('^_^-training data finished-^_^')
     return data
 
-if __name__ == '__main__':   
-
+if __name__ == '__main__':
     data = datagenerator(data_dir='data/Train400')
