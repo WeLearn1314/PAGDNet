@@ -55,7 +55,6 @@ def gen_patches(file_name):
     return patches
 
 def datagenerator(data_dir='data/Train400',verbose=False):
-    
     file_list = glob.glob(data_dir+'/*.png')  # get name list of all .png files
     # initrialize
     data = []
@@ -64,7 +63,7 @@ def datagenerator(data_dir='data/Train400',verbose=False):
         patch = gen_patches(file_list[i])
         data.append(patch)
         # if verbose:
-        #     print(str(i+1)+'/'+ str(len(file_list)) + ' is done ^_^')
+        #   print(str(i+1)+'/'+ str(len(file_list)) + ' is done ^_^')
     data = np.array(data, dtype='uint8')
     data = data.reshape((data.shape[0]*data.shape[1],data.shape[2],data.shape[3],1))
     for lens,img in enumerate(data):
